@@ -18,7 +18,6 @@ def create_order(
         if date:
             order.created_at = date
             order.save()
-        order = Order.objects.get(user=user)
 
         for ticket in tickets:
             row = ticket["row"]
