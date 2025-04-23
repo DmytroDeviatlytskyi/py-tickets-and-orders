@@ -2,8 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import ForeignKey
-
-import settings
+from django.conf import settings
 
 
 class Genre(models.Model):
@@ -122,7 +121,10 @@ class Ticket(models.Model):
             models.UniqueConstraint(
                 fields=["row", "seat"],
                 name="unique_ticket_row_seat"
-            )
+            ),
+            models.UniqueConstraint(
+                fields=["movie_session", "row", "seat"],
+                name="unique_ticket_row_seat_movie_session")
         ]
 
 

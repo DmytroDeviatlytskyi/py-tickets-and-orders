@@ -15,13 +15,12 @@ def create_user(
 
     if email:
         user.email = email
-        user.save()
     if first_name:
         user.first_name = first_name
-        user.save()
     if last_name:
         user.last_name = last_name
-        user.save()
+
+    user.save()
 
 
 def get_user(user_id: int) -> User:
@@ -40,20 +39,17 @@ def update_user(
 
     if username:
         user.username = username
-        user.save()
 
     if password:
         user.set_password(password)
-        user.save()
 
     if email:
         user.email = email
-        user.save()
 
     if first_name:
         user.first_name = first_name
-        user.save()
 
     if last_name:
         user.last_name = last_name
-        user.save()
+
+    user.save()
